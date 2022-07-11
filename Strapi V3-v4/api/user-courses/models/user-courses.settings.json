@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "user_courses",
+  "info": {
+    "name": "Usuarios y cursos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "course_id": {
+      "model": "courses"
+    },
+    "cohort_id": {
+      "model": "cohort"
+    },
+    "active": {
+      "type": "boolean",
+      "default": false
+    },
+    "expiration_date": {
+      "type": "datetime"
+    }
+  }
+}

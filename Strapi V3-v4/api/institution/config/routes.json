@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/institutions",
+      "handler": "institution.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/institutions/count",
+      "handler": "institution.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/institutions/:id",
+      "handler": "institution.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/findStudentByInstitution/:cohort",
+      "handler": "institution.findStudentsByInstitution",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/institutions",
+      "handler": "institution.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/institutions/:id",
+      "handler": "institution.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/institutions/:id",
+      "handler": "institution.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

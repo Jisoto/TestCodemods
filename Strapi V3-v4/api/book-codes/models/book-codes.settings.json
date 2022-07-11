@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "book_codes",
+  "info": {
+    "name": "Códigos de libros",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 10
+    },
+    "grade": {
+      "type": "integer",
+      "required": true
+    },
+    "number": {
+      "type": "integer",
+      "required": true
+    },
+    "generated_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "generated_by": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "activated_by": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

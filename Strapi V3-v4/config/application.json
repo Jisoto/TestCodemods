@@ -1,0 +1,11 @@
+{
+  "favicon": {
+    "path": "./dist/favicon/favicon.ico",
+    "maxAge": 86400000
+  },
+  "public": {
+    "path": "${process.env.NODE_ENV !== 'production' ? './public' : './dist'}",
+    "maxAge": 60000,
+    "defaultIndex": false
+  }
+}

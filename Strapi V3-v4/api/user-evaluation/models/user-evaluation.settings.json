@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_evaluation",
+  "info": {
+    "name": "Evaluaciones de usuario",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "score_obtained": {
+      "type": "decimal"
+    },
+    "score_max": {
+      "type": "decimal"
+    },
+    "presentation_time": {
+      "type": "datetime"
+    },
+    "evaluation_id": {
+      "type": "biginteger",
+      "required": true
+    },
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "lesson": {
+      "columnName": "lesson",
+      "model": "lessons"
+    },
+    "course": {
+      "columnName": "course",
+      "model": "courses"
+    },
+    "evaluation_result": {
+      "type": "json"
+    },
+    "cohort_id": {
+      "model": "cohort"
+    }
+  }
+}

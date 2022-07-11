@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/api/stripe/create-payment-intent",
+      "handler": "stripe.createPayment",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/stripe/create-checkout-session",
+      "handler": "stripe.createCheckoutSession",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/stripe/webhook",
+      "handler": "stripe.webhookHandler",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/stripe/hasPhysicalItems/:sessionId",
+      "handler": "stripe.hasPhysicalItems",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

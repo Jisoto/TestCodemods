@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/evaluations",
+      "handler": "evaluations.findMyEvaluations",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/evaluations/count",
+      "handler": "evaluations.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/evaluations/:id",
+      "handler": "evaluations.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/evaluation/:courseSlug",
+      "handler": "evaluations.findEvaluationsByCourse",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/evaluations",
+      "handler": "evaluations.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/evaluations/:id",
+      "handler": "evaluations.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/deleteEvaluationWithCourse/:courseSlug",
+      "handler": "evaluations.deleteEvaluationrelationWithCourse",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/evaluations/:id",
+      "handler": "evaluations.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/evaluations/score-test",
+      "handler": "evaluations.scoreTest",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

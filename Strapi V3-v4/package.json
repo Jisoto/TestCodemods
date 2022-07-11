@@ -1,0 +1,80 @@
+{
+  "name": "wolf-video-platform",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "cross-env NODE_ENV=development strapi develop",
+    "build": "strapi build --clean",
+    "strapi": "strapi",
+    "strapi:config:dump": "strapi config:dump --file config-dump.json --pretty",
+    "strapi:config:restore:staging": "ENV_PATH=./.env.prod.local strapi config:restore --file config-dump.json --strategy replace",
+    "frontend:dev": "cd ../frontend && npm run start",
+    "frontend:prod": "cd ../frontend && npm run build:production",
+    "frontend:staging": "cd ../frontend && npm run build:staging",
+    "build:production": "cross-env NODE_ENV=production npm-run-all frontend:prod build",
+    "build:staging": "cross-env NODE_ENV=staging npm-run-all frontend:staging build",
+    "start": "npm run start:strapi",
+    "start:strapi": "strapi start",
+    "start:dev": "cross-env NODE_ENV=development npm-run-all --parallel frontend:dev develop",
+    "create-artifact": "node ./archiver",
+    "deploy": "npm run build:production && npm run create-artifact && cd .. && eb use WolfVideoPlatform-16052021-v2 && eb deploy",
+    "deploy:staging": "npm run build:staging && npm run create-artifact && cd .. && eb use WolfVideoPlatform-STAGING && eb deploy",
+    "lint:staged": "lint-staged",
+    "prepare": "cd .. && husky install backend/.husky"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "archiver": "^3.1.1",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "@strapi/codemods": "^1.1.1",
+    "geoip-country": "^4.1.5",
+    "knex": "0.21.18",
+    "lodash": "^4.17.21",
+    "npm-run-all": "^4.1.5",
+    "pg": "latest",
+    "puppeteer": "^10.4.0",
+    "stripe": "^8.186.1",
+    "uuid": "^3.4.0",
+    "@strapi/strapi": "4.2.2",
+    "@strapi/admin": "4.2.2",
+    "@strapi/plugin-content-manager": "4.2.2",
+    "@strapi/plugin-content-type-builder": "4.2.2",
+    "@strapi/plugin-email": "4.2.2",
+    "@strapi/plugin-upload": "4.2.2",
+    "@strapi/plugin-users-permissions": "4.2.2",
+    "@strapi/provider-email-nodemailer": "4.2.2",
+    "@strapi/provider-upload-aws-s3": "4.2.2",
+    "@strapi/utils": "4.2.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{css,html,md}": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "author": {
+    "name": "Christian Guevara"
+  },
+  "strapi": {
+    "uuid": "c2e96002-2c70-4c3d-9566-11b225b9f603"
+  },
+  "engines": {
+    "node": "14.16.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

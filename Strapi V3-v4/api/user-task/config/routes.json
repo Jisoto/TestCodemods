@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/user-tasks",
+      "handler": "user-task.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-tasks/count",
+      "handler": "user-task.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-task/:id",
+      "handler": "user-task.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-tasks/:courseSlug",
+      "handler": "user-task.findUserTaskWithCourseSlug",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/user-task",
+      "handler": "user-task.findOneOrCreate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/user-tasks",
+      "handler": "user-task.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/user-tasks/:id",
+      "handler": "user-task.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/user-tasks/:id",
+      "handler": "user-task.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

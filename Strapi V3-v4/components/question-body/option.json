@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_question_body_options",
+  "info": {
+    "name": "Option",
+    "icon": "border-all",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "score": {
+      "type": "decimal",
+      "required": true,
+      "min": 0,
+      "private": true,
+      "default": 0
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "maxLength": 400
+    },
+    "true_false": {
+      "type": "boolean"
+    }
+  }
+}

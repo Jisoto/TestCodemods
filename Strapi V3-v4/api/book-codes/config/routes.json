@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/book-codes",
+      "handler": "book-codes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/my-book-codes",
+      "handler": "book-codes.findMyBookCodes",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/book-codes/count",
+      "handler": "book-codes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/book-codes/:id",
+      "handler": "book-codes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/book-codes",
+      "handler": "book-codes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/book-codes/:id",
+      "handler": "book-codes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/book-codes-active/:code",
+      "handler": "book-codes.activeBookCode",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/book-codes/:id",
+      "handler": "book-codes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
