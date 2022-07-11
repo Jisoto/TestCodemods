@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "name": "task",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "accepted_files": {
+      "type": "string",
+      "required": true
+    },
+    "file_size_maximun": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "task_finish_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "lessons": {
+      "collection": "lessons"
+    },
+    "files_accept": {
+      "type": "json"
+    },
+    "user_created": {
+      "type": "integer"
+    }
+  }
+}

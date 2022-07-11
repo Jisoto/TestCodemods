@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/lessons",
+      "handler": "lessons.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/lessons/count",
+      "handler": "lessons.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/lessons/:courseSlug/:lessonSlug",
+      "handler": "lessons.findByCourseAndLessonSlug",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/lessons/:id",
+      "handler": "lessons.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/lessons",
+      "handler": "lessons.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/lessons/:id",
+      "handler": "lessons.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/lessonsUpdateRelations/:category",
+      "handler": "lessons.updateRelationsWithEvaluationsAndTasks",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/lessons/:id",
+      "handler": "lessons.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

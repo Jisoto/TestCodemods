@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/user-courses",
+      "handler": "user-courses.findMyCourses",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-courses/count",
+      "handler": "user-courses.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-courses/:courseSlug",
+      "handler": "user-courses.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/user-courses",
+      "handler": "user-courses.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/user-courses/:id",
+      "handler": "user-courses.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/user-courses/:id",
+      "handler": "user-courses.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

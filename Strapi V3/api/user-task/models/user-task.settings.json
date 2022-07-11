@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_tasks",
+  "info": {
+    "name": "user task",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "qualified": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "score": {
+      "type": "decimal",
+      "required": true
+    },
+    "presentation_time": {
+      "type": "datetime",
+      "required": true
+    },
+    "file_delivered": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "clase": {
+      "model": "lessons"
+    },
+    "curso": {
+      "model": "courses"
+    },
+    "task_id": {
+      "type": "integer"
+    },
+    "cohort": {
+      "model": "cohort"
+    }
+  }
+}

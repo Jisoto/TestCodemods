@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/user-evaluations",
+      "handler": "user-evaluation.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-evaluations/count",
+      "handler": "user-evaluation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-evaluation/:id",
+      "handler": "user-evaluation.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-evaluations/:courseSlug",
+      "handler": "user-evaluation.findUserEvaluationWithCourseSlug",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/user-evaluations",
+      "handler": "user-evaluation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/user-evaluations/:id",
+      "handler": "user-evaluation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/user-evaluations/:id",
+      "handler": "user-evaluation.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-evaluations-data",
+      "handler": "user-evaluation.findByEvaluation",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

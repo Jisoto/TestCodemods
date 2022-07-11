@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "videos",
+  "info": {
+    "name": "Videos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "guid": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "dash_url": {
+      "type": "string",
+      "required": true,
+      "maxLength": 125
+    },
+    "dash_playlist": {
+      "type": "string",
+      "maxLength": 125,
+      "required": true
+    },
+    "hls_url": {
+      "type": "string",
+      "maxLength": 125,
+      "required": true
+    },
+    "hls_playlist": {
+      "type": "string",
+      "maxLength": 125,
+      "required": true
+    },
+    "src_video": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "lesson_id": {
+      "via": "videos",
+      "model": "lessons"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_question_body_questions",
+  "info": {
+    "name": "question",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "selection_type": {
+      "type": "enumeration",
+      "enum": [
+        "unique",
+        "multiple",
+        "true_false",
+        "complete"
+      ],
+      "required": true
+    },
+    "score": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "maxLength": 1400
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "question-body.option"
+    }
+  }
+}

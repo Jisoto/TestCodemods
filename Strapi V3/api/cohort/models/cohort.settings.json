@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cohort",
+  "info": {
+    "name": "cohort",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "start_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "end_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "students": {
+      "via": "cohorts",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    },
+    "teacher": {
+      "via": "cohortsCharge",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "description": {
+      "type": "text"
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "course": {
+      "model": "courses",
+      "via": "cohort"
+    },
+    "institution": {
+      "model": "institution"
+    }
+  }
+}

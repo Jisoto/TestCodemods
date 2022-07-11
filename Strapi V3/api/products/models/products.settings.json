@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "products",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "price_in_cents": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "price_id": {
+      "type": "string"
+    },
+    "has_physical_items": {
+      "type": "boolean",
+      "default": false
+    },
+    "only_institutions": {
+      "type": "boolean",
+      "default": false
+    },
+    "courses": {
+      "collection": "courses"
+    },
+    "materials": {
+      "collection": "materials"
+    },
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "public": {
+      "type": "boolean",
+      "default": false
+    },
+    "expires_in": {
+      "type": "integer",
+      "default": 1,
+      "min": 0
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "countries": {
+      "collection": "countries"
+    }
+  }
+}

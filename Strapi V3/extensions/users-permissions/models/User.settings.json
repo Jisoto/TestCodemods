@@ -1,0 +1,138 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "users-permissions_user",
+  "info": {
+    "name": "user",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "model": "role",
+      "via": "users",
+      "plugin": "users-permissions",
+      "configurable": false
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 30,
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "address": {
+      "type": "text",
+      "required": false,
+      "maxLength": 200
+    },
+    "dni": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "profile_photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "cohorts": {
+      "via": "students",
+      "collection": "cohort"
+    },
+    "cohortsCharge": {
+      "via": "teacher",
+      "collection": "cohort"
+    },
+    "stripe_id": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "tutor_name": {
+      "type": "string"
+    },
+    "tutor_last_name": {
+      "type": "string"
+    },
+    "tutor_phone": {
+      "type": "string"
+    },
+    "tutor_email": {
+      "type": "email"
+    },
+    "under_age": {
+      "type": "boolean"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "date_birth": {
+      "type": "date"
+    },
+    "institution": {
+      "via": "users",
+      "model": "institution"
+    }
+  }
+}

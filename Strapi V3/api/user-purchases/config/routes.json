@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/user-purchases",
+      "handler": "user-purchases.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-purchases/count",
+      "handler": "user-purchases.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-purchase/:sessionId",
+      "handler": "user-purchases.findWithSession",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/user-purchases-product/:productSlug",
+      "handler": "user-purchases.findWithProductSlug",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/user-purchases",
+      "handler": "user-purchases.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/user-purchases/createWireTransfer",
+      "handler": "user-purchases.createWireTransfer",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/user-purchases/:id",
+      "handler": "user-purchases.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/user-purchases/:id",
+      "handler": "user-purchases.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/cohorts",
+      "handler": "cohort.findStudents",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/cohorts/count",
+      "handler": "cohort.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/cohorts/:id",
+      "handler": "cohort.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/findMyCohorts/:cohort",
+      "handler": "cohort.findMyCohorts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/cohorts",
+      "handler": "cohort.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/cohorts/:id",
+      "handler": "cohort.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/registerStudents/:cohort_id",
+      "handler": "cohort.registerStudentFromExcel",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/cohorts/:id",
+      "handler": "cohort.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

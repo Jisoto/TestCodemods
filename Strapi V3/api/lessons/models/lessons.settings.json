@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "lessons",
+  "info": {
+    "name": "Clases",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 500
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "string",
+      "unique": false,
+      "required": true,
+      "maxLength": 50
+    },
+    "order": {
+      "type": "integer",
+      "required": true
+    },
+    "course_id": {
+      "via": "lessons",
+      "model": "courses"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "videos": {
+      "via": "lesson_id",
+      "collection": "videos"
+    },
+    "references": {
+      "type": "json"
+    }
+  }
+}

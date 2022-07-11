@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "courses",
+  "info": {
+    "name": "Cursos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "short_name": {
+      "type": "string",
+      "required": false,
+      "maxLength": 20
+    },
+    "name": {
+      "type": "string",
+      "required": false,
+      "maxLength": 50
+    },
+    "description": {
+      "type": "richtext",
+      "required": false,
+      "maxLength": 1500
+    },
+    "slug": {
+      "type": "string",
+      "required": false,
+      "unique": true,
+      "maxLength": 50
+    },
+    "order": {
+      "type": "integer",
+      "required": false
+    },
+    "lessons": {
+      "via": "course_id",
+      "collection": "lessons"
+    },
+    "course_features": {
+      "via": "course_id",
+      "collection": "course-features"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "course_template": {
+      "model": "courses"
+    },
+    "is_template": {
+      "type": "boolean",
+      "default": false
+    },
+    "cohort": {
+      "via": "course",
+      "model": "cohort"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Lab_Academy",
+        "Foundation",
+        "Standard"
+      ]
+    },
+    "active": {
+      "type": "boolean",
+      "required": false
+    }
+  }
+}
